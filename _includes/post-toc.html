@@ -1,0 +1,45 @@
+<div class="tree-list"></div>
+
+<script>
+    window.onload = loadTOC
+
+    function loadTOC() {
+        var prevTag = ""
+        var currTag = ""
+        var tagStack = new Array()
+
+        var TOC = ''
+        $(".post > :header").each(function () {
+            var header = $(this)
+            var title = header.text()
+            var link = "#" + header.attr("id")
+            currTag = header[0].tagName
+            if (currTag > prevTag) {
+                // h1 -> h2, h2 -> h3
+                TOC += "<ul><li><a href=" + link + ">" + title + "</a>"
+                tagStack.push("</ul>")
+                tagStack.push("</li>")
+            } else if (currTag == prevTag) {
+                // h2 -> h2
+                TOC += tagStack.pop() // li
+                TOC += "<li><a href=" + link + ">" + title + "</a>"
+                tagStack.push("</li>")
+            } else {
+                // h3 -> h2, h2 -> h1, h3 -> h1
+                TOC += tagStack.pop() // li
+                for (i = 0; i < (prevTag[1] - currTag[1]); i++) {
+                    TOC += tagStack.pop() // ul
+                    TOC += tagStack.pop() // li
+                }
+                TOC += "<li><a href=" + link + ">" + title + "</a>"
+                tagStack.push("</li>")
+            }
+            prevTag = currTag
+        })
+        while (tagStack.length > 0) {
+            TOC += tagStack.pop()
+        }
+
+        $("div.tree-list").append(TOC)
+    }
+</script>

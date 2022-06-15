@@ -1,0 +1,7 @@
+{% if page.tags | size != 0 %}
+<div class="tag-cloud-post">
+    {% for tag in page.tags %}
+    <a href="{{ "/archive.html" | relative_url }}#{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+</div>
+{% endif %}

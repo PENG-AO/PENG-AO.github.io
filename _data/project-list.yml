@@ -1,0 +1,54 @@
+- name: Days in Japan (0)
+  span: 2018.10 ~ 2019.03
+  type: life
+
+- name: Days in Japan (1)
+  span: 2019.04 ~ 2020.03
+  type: life
+
+- name: Days in Japan (2)
+  span: 2020.04 ~ 2021.03
+  type: life
+
+- name: GameBoy simulator
+  span: 2021.02 ~ 2021.03
+  link: https://github.com/PENG-AO/pyGB
+  type: git
+
+- name: Days in Japan (3)
+  span: 2021.04 ~ 2022.03
+  type: life
+
+- name: Ncurses tutorial
+  span: 2021.09 ~ 2021.11
+  type: code
+
+- name: RISC-V simulator
+  span: 2021.10 ~ 2022.02
+  type: git
+
+- name: 诗经小记
+  span: 2021.12 ~ 202X.XX
+  type: book
+
+- name: 可复用强密码生成器
+  span: 2022.02 ~ 2022.02
+  type: code
+
+- name: 数据结构的汇编实现
+  span: 2022.03 ~ 2022.XX
+  type: code
+
+- name: Days in Japan (4)
+  span: 2022.04 ~ 202X.XX
+  type: life
+
+- name: EJU PHY
+  span: 2022.04 ~ 2022.05
+  link: https://github.com/PENG-AO/EJU-PHY
+  type: book
+
+- name: Urban Brush demo
+  span: 2022.05 ~ 2022.06
+  link: https://github.com/PENG-AO/urban-brush-demo
+  type: git

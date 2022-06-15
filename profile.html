@@ -1,0 +1,292 @@
+---
+layout: default
+title: profile
+---
+
+<h1><i class="fas fa-user-edit"></i></i> About me</h1>
+
+<div>
+    This is PENG AO from
+    <ul>
+        <li><i class="fas fa-university fa-fw"></i> The University of Tokyo</li>
+        <li><i class="fas fa-school fa-fw"></i> School of Science</li>
+        <li><i class="fas fa-building fa-fw"></i> Department of Information Science</li>
+    </ul>
+    who is currently living in Tokyo, Japan.
+</div>
+
+<hr>
+<div>
+    And, I'm a/an
+    <ul>
+        <li><i class="fas fa-user-graduate fa-fw"></i> professional student</li>
+        <li><i class="fas fa-coffee fa-fw"></i> perfectionist coder</li>
+        <li><i class="fas fa-book-reader fa-fw"></i> optimistic reader</li>
+        <li><i class="fas fa-dumbbell fa-fw"></i> lite bodybuilder</li>
+        <li><i class="fas fa-compass fa-fw"></i> inquisitive traveler</li>
+        <li><i class="fas fa-camera fa-fw"></i> amateur photographer</li>
+        <li>...</li>
+    </ul>
+    who'd like to explore more and need love.
+</div>
+
+<hr>
+<div>
+    Specifically, I'm majoring in
+    <ul>
+        <li><i class="fas fa-laptop-code fa-fw"></i> computer science</li>
+    </ul>
+    and especially interested in
+    <ul>
+        <li><i class="fas fa-thumbs-up fa-fw"></i> user interface</li>
+        <li><i class="fas fa-laptop-house fa-fw"></i> operating system</li>
+        <li><i class="fas fa-microchip fa-fw"></i> embedded system</li>
+        <li>...</li>
+    </ul>
+    who haven't decided which to specialize in the future.
+</div>
+
+<hr>
+<div>
+    As a coder, I enjoy perfecting the
+    <ul>
+        <li><i class="fas fa-project-diagram fa-fw"></i> code logic</li>
+        <li><i class="fas fa-stream fa-fw"></i> code style</li>
+    </ul>
+    and am able to write with
+    <ul>
+        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Python, C</li>
+        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> OCaml, Assembly</li>
+        <li><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> C++</li>
+        <li><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> Swift, JavaScript</li>
+    </ul>
+    who also interested in Rust and Lua.
+</div>
+
+<hr>
+<div>
+    Usually, I read with intense purposiveness and
+    <ul>
+        <li><i class="fas fa-book fa-fw"></i> chinese classical poetry</li>
+        <li><i class="fas fa-book fa-fw"></i> chinese classical philosophy</li>
+        <li><i class="fas fa-book fa-fw"></i> martial arts (wu xia) novel</li>
+        <li>...</li>
+    </ul>
+    are my favorites.
+</div>
+
+<hr>
+<div>
+    Every night I spare time for working out at home<br>
+    and love push up and pull up in particular.
+</div>
+
+<hr>
+<div>
+    I also have a restless heart for traveling by
+    <ul>
+        <li><i class="fas fa-hiking fa-fw"></i> walking</li>
+        <li><i class="fas fa-train fa-fw"></i> trains</li>
+        <li><i class="fas fa-car fa-fw"></i> cars</li>
+        <li>...</li>
+    </ul>
+    and enjoy taking photos of both nature view and modern city.<br>
+    Here's my footprints in China
+    <div id="china-map" style="width: 100%; height: 480px;"></div>
+    and Japan so far.
+    <div id="japan-map" style="width: 100%; height: 480px;"></div>
+</div>
+
+<hr>
+<div>
+    Thank you for reaching here! You may contact me by "{{ site.email }}".
+</div>
+
+{% include comment.html %}
+
+<!-- china map -->
+<script>
+    $(() => {
+        var markers = [
+            { latLng: [41.80, 123.43], name: '沈阳市' },
+            { latLng: [41.36, 119.84], name: '公营子镇塔子下村'},
+            { latLng: [41.57, 120.45], name: '朝阳市' },
+            { latLng: [38.91, 121.61], name: '大连市' },
+            { latLng: [41.09, 121.13], name: '锦州市' },
+            { latLng: [41.26, 123.23], name: '辽阳市' },
+            { latLng: [41.94, 126.41], name: '白山市(长白山)' },
+            { latLng: [39.90, 116.41], name: '北京市' },
+            { latLng: [39.94, 119.60], name: '秦皇岛市' },
+            { latLng: [36.65, 117.12], name: '济南市' },
+            { latLng: [36.20, 117.08], name: '泰安市' },
+            { latLng: [32.46, 119.93], name: '泰州市' },
+            { latLng: [32.39, 119.41], name: '扬州市' },
+            { latLng: [29.57, 106.55], name: '重庆市' },
+            { latLng: [30.57, 104.07], name: '成都市' },
+            { latLng: [22.32, 114.17], name: '香港' },
+            { latLng: [34.27, 108.95], name: '西安市' },
+            { latLng: [40.08, 113.30], name: '大同市' },
+            { latLng: [34.62, 112.45], name: '洛阳市' },
+            { latLng: [30.27, 120.16], name: '杭州市' },
+            { latLng: [30.00, 120.59], name: '绍兴市' },
+            { latLng: [29.72, 118.34], name: '黄山市' },
+            { latLng: [27.76, 118.04], name: '武夷山市' },
+            { latLng: [26.65, 106.63], name: '贵阳市' },
+            { latLng: [26.58, 107.98], name: '黔东南州(西江苗寨)' },
+            { latLng: [25.41, 107.89], name: '荔波县' },
+            { latLng: [27.13, 108.76], name: '镇远县' },
+            { latLng: [28.23, 112.94], name: '长沙市' },
+            { latLng: [29.24, 117.86], name: '上饶市(婺源)' },
+            { latLng: [26.89, 120.00], name: '宁德市(霞浦)' },
+            { latLng: [37.19, 112.18], name: '晋中市(平遥)' },
+            { latLng: [37.87, 112.55], name: '太原市' },
+            { latLng: [36.09, 111.52], name: '临汾市' },
+            { latLng: [36.06, 103.83], name: '兰州市' },
+            { latLng: [40.14, 94.66], name: '敦煌市' },
+            { latLng: [38.93, 100.45], name: '张掖市' },
+            { latLng: [36.61, 101.78], name: '西宁市' },
+            { latLng: [37.36, 97.36], name: '德令哈市' },
+            { latLng: [36.93, 98.48], name: '海西州乌兰县' },
+        ];
+    var map = new jvm.Map({
+        container: $('#china-map'),
+        map: 'cn_merc',
+        backgroundColor: '#CCE2EC',
+        zoomMin: 0.8,
+		zoomMax: 4.8,
+        showTooltip: false,
+        hoverOpacity: 0.7,
+        markerStyle: { initial: { fill: '#f8e23b', stroke: '#383f47', r: 3 } },
+        markers: markers
+    });
+});
+</script>
+
+<!-- japan map -->
+<script>
+    $(() => {
+        var markers = [
+            { latLng: [35.68, 139.76], name: '東京: 16/02, 19/02, 20/11~' },
+            { latLng: [35.01, 135.77], name: '京都: 16/01, 18/10~19/03, 20/03, 21/02' },
+            { latLng: [35.69, 139.56], name: '三鷹: 19/04~20/10' },
+            { latLng: [35.02, 135.86], name: '大津: 18/10, 20/03' },
+            { latLng: [34.69, 135.50], name: '大阪: 16/01, 18/10' },
+            { latLng: [34.93, 135.70], name: '長岡京: 18/11' },
+            { latLng: [34.84, 135.70], name: '向日: 18/11' },
+            { latLng: [34.88, 135.80], name: '宇治: 18/11, 18/12, 19/03' },
+            { latLng: [34.88, 135.70], name: '八幡: 18/12' },
+            { latLng: [35.44, 139.64], name: '横浜: 16/02, 19/01, 19/06, 20/06' },
+            { latLng: [35.53, 139.70], name: '川崎: 16/02, 19/01, 19/02' },
+            { latLng: [35.18, 136.91], name: '名古屋: 19/02' },
+            { latLng: [34.97, 139.10], name: '伊東: 19/04, 21/08' },
+            { latLng: [35.44, 139.64], name: '鎌倉/藤沢: 16/02, 19/05, 19/08' },
+            { latLng: [41.76, 140.73], name: '函館: 19/08' },
+            { latLng: [40.82, 140.74], name: '青森: 19/08' },
+            { latLng: [40.60, 140.46], name: '弘前: 19/08' },
+            { latLng: [39.71, 140.10], name: '秋田: 19/08' },
+            { latLng: [39.59, 140.57], name: '仙北(角館): 19/08' },
+            { latLng: [39.70, 141.15], name: '盛岡: 19/08' },
+            { latLng: [38.27, 140.87], name: '仙台: 19/08' },
+            { latLng: [36.72, 139.70], name: '日光: 19/12' },
+            { latLng: [37.49, 139.93], name: '会津若松: 19/12' },
+            { latLng: [35.66, 138.57], name: '甲府: 20/03' },
+            { latLng: [36.03, 138.11], name: '諏訪: 20/03, 20/09, 22/03' },
+            { latLng: [36.24, 137.97], name: '松本: 20/03, 22/03' },
+            { latLng: [35.97, 137.81], name: '塩尻(奈良井): 20/03' },
+            { latLng: [35.40, 136.85], name: '各務原: 20/03' },
+            { latLng: [35.38, 136.94], name: '犬山: 20/03' },
+            { latLng: [35.27, 136.26], name: '彦根: 20/03' },
+            { latLng: [35.01, 135.96], name: '草津: 20/03' },
+            { latLng: [33.18, 129.72], name: '佐世保: 20/03' },
+            { latLng: [33.88, 130.88], name: '北九州: 20/03' },
+            { latLng: [34.39, 132.46], name: '広島: 20/03' },
+            { latLng: [34.40, 133.20], name: '尾道: 20/03' },
+            { latLng: [34.58, 133.77], name: '倉敷: 20/03' },
+            { latLng: [34.66, 133.92], name: '岡山: 20/03' },
+            { latLng: [34.82, 134.69], name: '姫路: 20/03' },
+            { latLng: [34.64, 135.00], name: '明石: 20/03' },
+            { latLng: [35.46, 138.83], name: '富士山: 20/05' },
+            { latLng: [34.43, 134.04], name: '高松: 20/08' },
+            { latLng: [34.07, 134.55], name: '徳島: 20/08' },
+            { latLng: [33.88, 133.84], name: '三好: 20/08' },
+            { latLng: [33.56, 133.53], name: '高知: 20/08' },
+            { latLng: [32.99, 132.93], name: '四万十: 20/08' },
+            { latLng: [32.78, 132.96], name: '土佐清水: 20/08' },
+            { latLng: [33.51, 132.54], name: '大洲: 20/08' },
+            { latLng: [33.66, 132.59], name: '伊予(下灘): 20/08' },
+            { latLng: [33.84, 132.77], name: '松山: 20/08' },
+            { latLng: [33.98, 133.55], name: '四国中央: 20/08' },
+            { latLng: [34.29, 133.80], name: '丸亀: 20/08' },
+            { latLng: [35.92, 138.43], name: '北杜(清里): 20/09, 21/12' },
+            { latLng: [35.73, 137.93], name: '駒ヶ根: 20/09' },
+            { latLng: [36.08, 140.08], name: '筑波: 20/11' },
+            { latLng: [36.24, 139.54], name: '館林: 20/12' },
+            { latLng: [36.34, 139.45], name: '足利: 20/12' },
+            { latLng: [36.31, 139.20], name: '伊勢崎: 20/12' },
+            { latLng: [36.39, 139.06], name: '前橋: 20/12' },
+            { latLng: [36.22, 139.00], name: '高崎: 20/12, 22/03' },
+            { latLng: [35.26, 139.15], name: '小田原: 21/02' },
+            { latLng: [35.10, 139.07], name: '熱海: 21/02, 21/08' },
+            { latLng: [34.98, 138.38], name: '静岡: 21/02' },
+            { latLng: [34.77, 138.00], name: '掛川: 21/02' },
+            { latLng: [34.71, 137.73], name: '浜松: 21/02' },
+            { latLng: [35.42, 136.76], name: '岐阜: 21/02' },
+            { latLng: [35.36, 136.61], name: '大垣: 21/02' },
+            { latLng: [35.38, 136.28], name: '長浜: 21/02' },
+            { latLng: [34.69, 135.80], name: '奈良: 16/01, 21/02' },
+            { latLng: [34.69, 135.20], name: '神戸: 21/02' },
+            { latLng: [36.37, 140.47], name: '水戸: 21/03' },
+            { latLng: [36.60, 140.65], name: '日立: 21/03' },
+            { latLng: [37.05, 140.89], name: 'いわき: 21/03' },
+            { latLng: [37.40, 140.36], name: '郡山: 21/03' },
+            { latLng: [37.76, 140.47], name: '福島: 21/03' },
+            { latLng: [37.13, 140.21], name: '白河: 21/03' },
+            { latLng: [36.96, 140.05], name: '那須塩原: 21/03' },
+            { latLng: [36.56, 139.88], name: '宇都宮: 21/03' },
+            { latLng: [35.86, 139.65], name: '埼玉: 16/02, 21/03' },
+            { latLng: [35.60, 140.10], name: '千葉: 21/03' },
+            { latLng: [35.38, 139.92], name: '木更津: 21/03' },
+            { latLng: [35.30, 139.86], name: '富津(鋸山): 21/03' },
+            { latLng: [35.00, 139.87], name: '館山: 21/03' },
+            { latLng: [35.15, 140.32], name: '勝浦: 21/03' },
+            { latLng: [35.97, 140.64], name: '鹿島: 21/03' },
+            { latLng: [35.90, 140.50], name: '香取(佐原): 21/03' },
+            { latLng: [35.73, 140.83], name: '銚子: 21/03' },
+            { latLng: [35.99, 139.09], name: '秩父: 21/05' },
+            { latLng: [35.87, 139.98], name: '柏: 21/06' },
+            { latLng: [34.76, 138.99], name: '河津: 21/08, 22/03' },
+            { latLng: [34.68, 138.95], name: '下田: 21/08' },
+            { latLng: [34.65, 138.86], name: '南伊豆: 21/08' },
+            { latLng: [34.77, 138.78], name: '西伊豆: 21/08' },
+            { latLng: [44.02, 144.27], name: '網走: 21/09' },
+            { latLng: [44.09, 145.06], name: '羅臼(知床): 21/09' },
+            { latLng: [43.49, 144.46], name: '弟子屈(阿寒摩周): 21/09' },
+            { latLng: [42.92, 143.20], name: '帯広: 21/09' },
+            { latLng: [42.02, 143.15], name: '襟裳: 21/09' },
+            { latLng: [43.34, 142.38], name: '富良野: 21/09' },
+            { latLng: [43.59, 142.47], name: '美瑛: 21/09' },
+            { latLng: [43.77, 142.36], name: '旭川: 21/09' },
+            { latLng: [35.71, 138.45], name: '韮崎: 21/12' },
+            { latLng: [36.10, 138.48], name: '小海: 21/12' },
+            { latLng: [36.25, 138.48], name: '佐久: 21/12' },
+            { latLng: [36.35, 138.60], name: '軽井沢: 21/12' },
+            { latLng: [36.65, 138.20], name: '長野: 22/03' },
+            { latLng: [36.40, 138.25], name: '上田: 22/03' },
+            { latLng: [37.11, 138.26], name: '上越(高田): 22/03' },
+            { latLng: [37.92, 139.04], name: '新潟: 22/03' },
+            { latLng: [36.62, 138.60], name: '草津: 22/03' },
+            { latLng: [38.91, 139.84], name: '酒田: 22/03' },
+        ];
+    var map = new jvm.Map({
+        container: $('#japan-map'),
+        map: 'jp_merc',
+        backgroundColor: '#CCE2EC',
+        zoomMin: 0.8,
+		zoomMax: 6.4,
+        showTooltip: false,
+        hoverOpacity: 0.7,
+        markerStyle: { initial: { fill: '#f8e23b', stroke: '#383f47', r: 3 } },
+        markers: markers
+    });
+});
+</script>

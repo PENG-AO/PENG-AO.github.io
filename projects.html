@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% if site.data.project-list.size > 0 %}
+<div class="post-list">
+    <h1><i class="fa fa-puzzle-piece"></i> Projects</h1>
+    <p>{{ site.data.project-list.size }} projects in total.</p>
+    <ul>
+        {% assign projects = site.data.project-list | reverse %}
+        {% for project in projects %}
+        <li>
+            <span>[ {{ project.span }} ]</span>
+            {% case project.type %}
+            {% when 'git' %}<i class="fab fa-github-alt fa-fw"></i>
+            {% when 'code' %}<i class="fas fa-code-branch fa-fw"></i>
+            {% when 'life' %}<i class="fas fa-map-marked-alt fa-fw"></i>
+            {% when 'book' %}<i class="fas fa-book fa-fw"></i>
+            {% else %}<i class="fas fa-file-archive fa-fw"></i>
+            {% endcase%}
+            <a href="
+                {% if project.link %}
+                    {{ project.link }}
+                {% else %}
+                    /projects/{{ project.name }}.html
+                {% endif %}">
+                {{ project.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+No project yet.
+{% endif %}

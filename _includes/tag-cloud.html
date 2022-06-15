@@ -1,0 +1,8 @@
+{% if site.tags | size != 0 %}
+<div class="tag-cloud">
+    <h1><i class="fa fa-tags"></i> Tags</h1>
+    {% for tag in site.tags %}
+    <a href="{{ "/archive.html" | relative_url }}#{{ tag[0] }}">{{ tag[0] }}</a>
+    {% endfor %}
+</div>
+{% endif %}

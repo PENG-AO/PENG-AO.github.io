@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="post-list">
+    <h1><i class="fas fa-bell"></i> Bulletin</h1>
+    {% if site.data.bulletin.size > 0 %}
+    <ul>
+        {% assign entries = site.data.bulletin | reverse %}
+        {% for entry in entries %}
+        <li>
+            <span>[ {{ entry.tag }} ]</span> {{ entry.info }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>nothing available</p>
+    {% endif %}
+</div>
+
+<div class="post-list">
+    <h1><i class="fa fa-folder-open"></i> <a href="posts.html">Posts</a></h1>
+    {% if site.posts.size > 0 %}
+    <ul>
+        {% for post in site.posts limit:15 %}
+            {% if forloop.last and site.posts.size > 15 %}
+            <li> <a href="posts.html">...</a></li>
+            {% else %}
+            <li>
+                {% assign date_format = "%Y.%m.%d" %}
+                <span>[ {{ post.date | date: date_format }} ]</span>
+                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>nothing available</p>
+    {% endif %}
+</div>
+
+<div class="post-list">
+    <h1><i class="fa fa-puzzle-piece"></i> <a href="projects.html">Projects</a></h1>
+    <div class="img-frame"><img src="https://ghchart.rshah.org/PENG-AO" alt="My GitHub Contributions"/></div>
+    {% if site.data.project-list.size > 0 %}
+    <ul>
+        {% assign projects = site.data.project-list | reverse %}
+        {% for project in projects limit:15 %}
+            {% if forloop.last and projects.size > 15 %}
+            <li><a href="projects.html">...</a></li>
+            {% else %}
+            <li>
+                <span>[ {{ project.span }} ]</span>
+                {% case project.type %}
+                {% when 'git' %}<i class="fab fa-github-alt fa-fw"></i>
+                {% when 'code' %}<i class="fas fa-code-branch fa-fw"></i>
+                {% when 'life' %}<i class="fas fa-map-marked-alt fa-fw"></i>
+                {% when 'book' %}<i class="fas fa-book fa-fw"></i>
+                {% else %}<i class="fas fa-file-archive fa-fw"></i>
+                {% endcase%}
+                <a href="
+                    {% if project.link %}
+                        {{ project.link }}
+                    {% else %}
+                        /projects/{{ project.name }}.html
+                    {% endif %}">
+                    {{ project.name }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>nothing available</p>
+    {% endif %}
+</div>
+
+{% include tag-cloud.html %}

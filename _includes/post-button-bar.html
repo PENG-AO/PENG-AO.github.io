@@ -1,0 +1,9 @@
+<div class="post-button-bar">
+    {% if page.previous != nil %}
+    <a href="{{ page.previous.url | relative_url }}" class="btn-left">{{ page.previous.title }}</a>
+    {% endif %}
+    <a href="#page-top" class="btn-center">Back2top</a>
+    {% if page.next != nil %}
+    <a href="{{ page.next.url | relative_url }}" class="btn-right">{{ page.next.title }}</a>
+    {% endif %}
+</div>

@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div id="page-top"></div>
+
+{% include tag-cloud-post.html %}
+
+<div class="post-title">
+    {% assign date_format = "%Y.%m.%d" %}
+    <div class="post-date">{{ page.date | date: date_format }}</div>
+    <div class="main-title">{{ page.title }}</div>
+    {% if page.sub-title != null %}
+    <div class="sub-title">{{ page.sub-title }}</div>
+    {% endif %}
+</div>
+
+{% include post-toc.html %}
+
+<div class="post">
+    {{ content }}
+</div>
+
+{% include post-button-bar.html %}
+
+{% include comment.html %}
