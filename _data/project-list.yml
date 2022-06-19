@@ -46,7 +46,7 @@
 - name: EJU PHY
   span: 2022.04 ~ 2022.05
   link: https://github.com/PENG-AO/EJU-PHY
-  type: book
+  type: git
 
 - name: Urban Brush demo
   span: 2022.05 ~ 2022.06
