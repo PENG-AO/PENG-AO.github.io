@@ -46,14 +46,10 @@ permalink: /projects/Days in Japan (3).html
 <div class="gallery">
     <div class="item">
         <img src="/assets/src/days-in-japan/2021-11-1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/days-in-japan/2021-11-2.jpeg">
         <p>by Apple iPhone 11</p>
     </div>
     <div class="item">
-        <img src="/assets/src/days-in-japan/2021-11-3.jpeg">
+        <img src="/assets/src/days-in-japan/2021-11-2.jpeg">
         <p>by Apple iPhone 11</p>
     </div>
 </div>
