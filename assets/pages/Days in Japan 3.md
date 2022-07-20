@@ -81,8 +81,13 @@ permalink: /projects/Days in Japan (3).html
         <img src="/assets/src/days-in-japan/2022-01-6.jpeg">
         <p>by Apple iPhone 11</p>
     </div>
+</div>
+
+## 2022.03
+
+<div class="gallery">
     <div class="item">
-        <img src="/assets/src/days-in-japan/2022-01-7.jpeg">
+        <img src="/assets/src/days-in-japan/2022-03-1.jpeg">
         <p>by Apple iPhone 11</p>
     </div>
 </div>
